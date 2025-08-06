@@ -1,0 +1,191 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+#startScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('start_image.png') no-repeat center center;
+  background-size: cover;
+}
+
+#chatScreen {
+  display: none;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url('chat_background.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#chatLog {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding-right: 10px;
+}
+
+.chatMsg {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.fromH {
+  justify-content: flex-start;
+}
+
+.fromMe {
+  justify-content: flex-end;
+  font-weight: normal;
+}
+
+.fromH img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.msgText {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 8px 12px;
+  border-radius: 15px;
+  max-width: 70%;
+  word-break: break-word;
+}
+
+.fromMe .msgText {
+  background: #e6ddff;
+}
+
+.timeStamp {
+  position: relative;
+  top: 4px;
+  font-size: 0.7em;
+  color: #666;
+  flex-shrink: 0;
+  width: 40px;
+  text-align: center;
+}
+
+.fromH .timeStamp {
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+.fromMe .timeStamp {
+  margin-right: 8px;
+  margin-left: 0;
+}
+
+#answerOptions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.answerBtn {
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.answerBtn:hover {
+  background-color: #5248c8;
+}
+#chatHeader {
+  position: fixed;          /* 상단 고정 */
+  top: 0;                   /* 화면 맨 위 */
+  left: 0;
+  right: 0;
+  z-index: 10;              /* 다른 요소보다 위에 */
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 50px;             /* 세로 높이 조절 가능 (예: 60px) */
+  padding: 0 15px;          /* 좌우 여백 조절 */
+  background-color: #898984;
+
+  color: white;
+  font-weight: bold;
+  box-sizing: border-box;
+  user-select: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.backBtn {
+  font-size: 1.5em;
+  cursor: pointer;
+  user-select: none;
+
+  /* ↓ 여기가 위치 조정용! */
+  margin-left: 7px;   /* 왼쪽 여백 (원하는 만큼 조정) */
+  position: relative;
+  top: -3px;          /* 위로 올림 (또는 top: 2px은 아래로 내림) */
+}
+.infoBtn {
+  font-size: 1em;
+  cursor: pointer;
+  user-select: none;
+  margin-right: 5px;
+  position: relative;
+  top: -1px;
+}
+.centerArea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profileImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.chatName {
+  font-size: 1.1em;
+}
+.chatDate {
+  position: relative;
+  text-align: center;
+  margin: 60px 0 10px;
+  font-size: 0.9em;
+  color: #555;
+  width: 100vw;           /* 뷰포트 전체 너비 */
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+}
+.chatDate::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #ffffff;
+}
+
